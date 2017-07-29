@@ -13,7 +13,7 @@
 
 var fs = require("fs");
 var Twitter = require("twitter");
-var Spotify = require("spotify");
+//var Spotify = require("spotify");
 var Request = require("request");
 var SpotifyWebApi = require("spotify-web-api-node");
 //var movie = require("node-movie");
@@ -70,89 +70,8 @@ client.get('search/tweets', {q: 'JRBisMe'}, function(error, tweets, response) {
 };
 
 
-// Spotify search using song title
-function spotifyThis() {
+// Spotify search using song title removed from homework assignment
 
-		var song = process.argv[3];
-
-
-  var spotifyApi = new SpotifyWebApi({
-    client_id: spotifyKeys.client_id,
-    client_secret: spotifyKeys.client_secret,
-  });
-
-// Retrieve an access token
-spotifyApi.clientCredentialsGrant()
-  .then(function(data) {
-    console.log('The access token expires in ' + data.body['expires_in']);
-    console.log('The access token is ' + data.body['access_token']);
-
-    // Save the access token so that it's used in future calls
-    spotifyApi.setAccessToken(data.body['access_token']);
-  }, function(err) {
-    console.log('Something went wrong when retrieving an access token', err.message);
-  });
-
-  
- 
-
-
-
-
-
-//spotifyApi.searchTracks('Love', function(err, data) {
-//  if (err) {
-//    console.error('Something went wrong', err.message);
-//    return;
-//  }
-//
-//  // Print some information about the results
-//  console.log('I got ' + data.body.tracks.total + ' results!');
-//
-//  // Go through the first page of results
-//  var firstPage = data.body.tracks.items;
-//  console.log('The tracks in the first page are.. (popularity in parentheses)');
-//
-//  /*
-//   * 0: All of Me (97)
-//   * 1: My Love (91)
-//   * 2: I Love This Life (78)
-//   * ...
-//   */
-//  firstPage.forEach(function(track, index) {
-//    console.log(index + ': ' + track.name + ' (' + track.popularity + ')');
-//  });
-//});
-  
-
-
-
-
-
-
-
-
-
-
-///  var song = new Spotify({
-///  client_id: spotifyKeys.client_id,
-///  client_secret: spotifyKeys.client_secret,
-///
-///});
-///  song.search({ type: "track", query: "title"}, function(err, data) {
-///    if ( err ) {
-///        console.log('Error occurred: ' + err);
-///        return;  //from spotify npm docs
-///    }
-///    else{
-///    var songInfo = data.tracks.items[0];
-///    var songResult = console.log(songInfo.artists[0].name)
-///                     console.log(songInfo.name)
-///                     console.log(songInfo.album.name)
-///                     console.log(songInfo.preview_url)
-///    console.log(songResult);
-///    };
-///  });
 }  
 
 function movify(){
